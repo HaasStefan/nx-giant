@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { filter, map, Observable, ReplaySubject, share } from 'rxjs';
 import { Contract } from '../entities/contract.model';
@@ -7,9 +7,8 @@ import { Contract } from '../entities/contract.model';
   providedIn: 'root',
 })
 export class ContractService {
+  private http = inject(HttpClient);
   private cache$!: Observable<Contract[]>;
-
-  constructor(private readonly http: HttpClient) {}
 
   getAll(): Observable<Contract[]> {
     if (!this.cache$) {

@@ -29,6 +29,16 @@
       "@nx-giant/complaint/feature-list": [
         "libs/complaint/feature-list/src/index.ts"
       ],
+      "@nx-giant/contract/data-access": [
+        "libs/contract/data-access/src/index.ts"
+      ],
+      "@nx-giant/contract/feature-details": [
+        "libs/contract/feature-details/src/index.ts"
+      ],
+      "@nx-giant/contract/feature-list": [
+        "libs/contract/feature-list/src/index.ts"
+      ],
+      "@nx-giant/contract/ui": ["libs/contract/ui/src/index.ts"],
       "@nx-giant/customer/data-access": [
         "libs/customer/data-access/src/index.ts"
       ],

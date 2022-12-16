@@ -2,10 +2,31 @@ import { Route } from '@angular/router';
 
 export interface RoutingConfig {
   domain: string;
-  routes: (Route & { icon: 'plus' | 'list', label: string })[];
+  routes: (Route &
+    ({ icon?: 'plus' | 'list'; label?: string, hide?: boolean }))[];
 }
 
 export const routingConfigs: RoutingConfig[] = [
+  {
+    domain: 'contract',
+    routes: [
+      {
+        path: ':id',
+        hide: true,
+        loadComponent: async () =>
+          (await import('@nx-giant/contract/feature-details'))
+            .ContractFeatureDetailsComponent,
+      },
+      {
+        path: 'list',
+        icon: 'list',
+        label: 'List',
+        loadComponent: async () =>
+          (await import('@nx-giant/contract/feature-list'))
+            .ContractFeatureListComponent,
+      },
+    ],
+  },
   {
     domain: 'customer',
     routes: [

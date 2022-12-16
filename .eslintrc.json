@@ -36,6 +36,13 @@
                 ]
               },
               {
+                "sourceTag": "domain:contract",
+                "onlyDependOnLibsWithTags": [
+                  "domain:contract",
+                  "domain:shared"
+                ]
+              },
+              {
                 "sourceTag": "domain:complaint",
                 "onlyDependOnLibsWithTags": [
                   "domain:complaint",

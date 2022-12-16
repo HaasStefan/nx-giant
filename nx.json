@@ -50,10 +50,12 @@
       "linter": "eslint",
       "unitTestRunner": "jest",
       "buildable": true,
-      "standalone": "true"
+      "standalone": "true",
+      "style": "scss"
     },
     "@nrwl/angular:component": {
-      "style": "scss"
+      "style": "scss",
+      "standalone": true
     }
   },
   "defaultProject": "insurance-portal"

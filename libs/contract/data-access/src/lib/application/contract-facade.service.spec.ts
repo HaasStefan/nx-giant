@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FacadeService } from './facade.service';
+import { ContractFacadeService } from './contract-facade.service';
 
 describe('FacadeService', () => {
-  let service: FacadeService;
+  let service: ContractFacadeService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(FacadeService);
+    service = TestBed.inject(ContractFacadeService);
   });
 
   it('should be created', () => {

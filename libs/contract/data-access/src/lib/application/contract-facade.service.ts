@@ -12,7 +12,7 @@ interface State {
 @Injectable({
   providedIn: 'root',
 })
-export class FacadeService extends ComponentStore<State> {
+export class ContractFacadeService extends ComponentStore<State> {
   private contractService = inject(ContractService);
 
   readonly contracts$ = this.select(({ contracts }) => contracts);

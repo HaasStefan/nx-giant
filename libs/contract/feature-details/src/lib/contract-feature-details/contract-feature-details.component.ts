@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContractDetailsComponent } from '@nx-giant/contract/ui';
 import { ActivatedRoute } from '@angular/router';
-import { FacadeService } from '@nx-giant/contract/data-access';
+import { ContractFacadeService } from '@nx-giant/contract/data-access';
 import { exhaustAll, exhaustMap, map, switchMap } from 'rxjs';
 
 @Component({
@@ -15,7 +15,7 @@ import { exhaustAll, exhaustMap, map, switchMap } from 'rxjs';
 })
 export class ContractFeatureDetailsComponent {
   private activatedRoute = inject(ActivatedRoute);
-  private facade = inject(FacadeService);
+  private facade = inject(ContractFacadeService);
 
   readonly contract$ = this.activatedRoute.params.pipe(
     map(data => data['id']),

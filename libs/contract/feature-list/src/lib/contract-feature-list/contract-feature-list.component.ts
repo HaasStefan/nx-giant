@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FacadeService } from '@nx-giant/contract/data-access';
+import { ContractFacadeService } from '@nx-giant/contract/data-access';
 import {MatTableModule} from '@angular/material/table';
 import { RouterModule } from '@angular/router';
 
@@ -17,7 +17,7 @@ import { RouterModule } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContractFeatureListComponent implements OnInit {
-  private facade = inject(FacadeService);
+  private facade = inject(ContractFacadeService);
 
   readonly columndefs = ['policyNumber', 'createdOn', "insuranceStart", "customer"];
   readonly contracts$ = this.facade.contracts$;

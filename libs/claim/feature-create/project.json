@@ -9,7 +9,8 @@
       "executor": "@nrwl/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/claim/feature-create/ng-package.json"
+        "project": "libs/claim/feature-create/ng-package.json",
+        "tailwindConfig": "libs/claim/feature-create/tailwind.config.js"
       },
       "configurations": {
         "production": {

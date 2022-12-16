@@ -14,7 +14,34 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-giant/claim/domain": ["libs/claim/domain/src/index.ts"],
+      "@nx-giant/claim/feature-create": [
+        "libs/claim/feature-create/src/index.ts"
+      ],
+      "@nx-giant/claim/feature-list": ["libs/claim/feature-list/src/index.ts"],
+      "@nx-giant/complaint/domain": ["libs/complaint/domain/src/index.ts"],
+      "@nx-giant/complaint/feature-create": [
+        "libs/complaint/feature-create/src/index.ts"
+      ],
+      "@nx-giant/complaint/feature-list": [
+        "libs/complaint/feature-list/src/index.ts"
+      ],
+      "@nx-giant/customer/data-access": [
+        "libs/customer/data-access/src/index.ts"
+      ],
+      "@nx-giant/customer/feature-create": [
+        "libs/customer/feature-create/src/index.ts"
+      ],
+      "@nx-giant/customer/feature-list": [
+        "libs/customer/feature-list/src/index.ts"
+      ],
+      "@nx-giant/customer/ui": ["libs/customer/ui/src/index.ts"],
+      "@nx-giant/shared/data-access": ["libs/shared/data-access/src/index.ts"],
+      "@nx-giant/shared/domain": ["libs/shared/domain/src/index.ts"],
+      "@nx-giant/shared/ui": ["libs/shared/ui/src/index.ts"],
+      "@nx-giant/shared/util": ["libs/shared/util/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

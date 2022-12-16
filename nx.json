@@ -42,15 +42,15 @@
     "@nrwl/angular:application": {
       "style": "scss",
       "linter": "eslint",
-      "standalone": "true",
       "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
+      "e2eTestRunner": "cypress",
+      "standalone": "true"
     },
     "@nrwl/angular:library": {
-      "buildable": true,
       "linter": "eslint",
-      "standalone": "true",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "buildable": true,
+      "standalone": "true"
     },
     "@nrwl/angular:component": {
       "style": "scss"

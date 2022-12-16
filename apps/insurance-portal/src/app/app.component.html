@@ -1,4 +1,13 @@
-
-<nx-giant-sidebar [routingConfigs]="routingConfigs"></nx-giant-sidebar>
-
-<router-outlet></router-outlet>
+<div class="flex flex-col h-full">
+    <div class="bg-slate-800 w-full h-16 pl-6 pr-6 flex items-center font-bold text-2xl text-white fixed">
+        <span>Insurance Portal</span>
+    </div>
+    <div class="flex flex-grow-0">
+        <div class="w-72 bg-slate-700 h-screen pt-20 text-slate-100 p-4">
+            <nx-giant-sidebar [routingConfigs]="routingConfigs"></nx-giant-sidebar>
+        </div>
+        <div class="pt-20 p-4 bg-slate-50 w-full">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

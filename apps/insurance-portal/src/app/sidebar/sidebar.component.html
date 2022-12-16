@@ -1,7 +1,19 @@
 <nav>
-    <ul *ngFor="let config of routingConfigs">
-        <li>
-            <span>{{config.domain}}</span>
-        </li>
-    </ul>
+  <ul *ngFor="let config of routingConfigs">
+    <li class="mb-4">
+      <div class="font-medium">{{ config.domain | capitalize }}</div>
+      <hr class="mb-1"/>
+      <ng-container *ngFor="let route of config.routes">
+        <div
+          [routerLink]="[config.domain, route.path]"
+          [routerLinkActive]="[config.domain, route.path ?? '']"
+          #rl="routerLinkActive"
+          class="p-1 mb-1 rounded-md w-full hover:bg-slate-800"
+          [ngClass]="rl.isActive ? 'bg-slate-600 border border-slate-400' : ''"
+        >
+          <i [class]="'mr-2 fa-solid fa-' + route.icon"></i> {{ route.label }}
+        </div>
+      </ng-container>
+    </li>
+  </ul>
 </nav>

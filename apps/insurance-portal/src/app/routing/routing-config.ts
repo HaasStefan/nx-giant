@@ -2,7 +2,7 @@ import { Route } from '@angular/router';
 
 export interface RoutingConfig {
   domain: string;
-  routes: (Route & { icon: 'plus' | 'list' })[];
+  routes: (Route & { icon: 'plus' | 'list', label: string })[];
 }
 
 export const routingConfigs: RoutingConfig[] = [
@@ -12,6 +12,7 @@ export const routingConfigs: RoutingConfig[] = [
       {
         path: 'create',
         icon: 'plus',
+        label: 'Create new customer',
         loadComponent: async () =>
           (await import('@nx-giant/customer/feature-create'))
             .CustomerFeatureCreateComponent,
@@ -19,6 +20,7 @@ export const routingConfigs: RoutingConfig[] = [
       {
         path: 'list',
         icon: 'list',
+        label: 'List',
         loadComponent: async () =>
           (await import('@nx-giant/customer/feature-list'))
             .CustomerFeatureListComponent,
@@ -31,6 +33,7 @@ export const routingConfigs: RoutingConfig[] = [
       {
         path: 'create',
         icon: 'plus',
+        label: 'Create new claim',
         loadComponent: async () =>
           (await import('@nx-giant/claim/feature-create'))
             .ClaimFeatureCreateComponent,
@@ -38,6 +41,7 @@ export const routingConfigs: RoutingConfig[] = [
       {
         path: 'list',
         icon: 'list',
+        label: 'List',
         loadComponent: async () =>
           (await import('@nx-giant/claim/feature-list'))
             .ClaimFeatureListComponent,
@@ -50,6 +54,7 @@ export const routingConfigs: RoutingConfig[] = [
       {
         path: 'create',
         icon: 'plus',
+        label: 'Create new complaint',
         loadComponent: async () =>
           (await import('@nx-giant/complaint/feature-create'))
             .ComplaintFeatureCreateComponent,
@@ -57,6 +62,7 @@ export const routingConfigs: RoutingConfig[] = [
       {
         path: 'list',
         icon: 'list',
+        label: 'List',
         loadComponent: async () =>
           (await import('@nx-giant/complaint/feature-list'))
             .ComplaintFeatureListComponent,

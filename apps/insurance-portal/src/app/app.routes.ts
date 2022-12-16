@@ -1,11 +1,11 @@
 import { Route } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { HomeComponent } from './home/home.component';
 import { createRoutes } from './routing/routing-factory';
 
 export const appRoutes: Route[] = [
   {
     path: '',
-    component: NxWelcomeComponent,
+    component: HomeComponent,
   },
   ...createRoutes(),
 ];

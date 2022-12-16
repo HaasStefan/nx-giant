@@ -1,11 +1,29 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FacadeService } from '@nx-giant/contract/data-access';
+import {MatTableModule} from '@angular/material/table';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'nx-giant-contract-feature-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    MatTableModule,
+    RouterModule
+  ],
   templateUrl: './contract-feature-list.component.html',
   styleUrls: ['./contract-feature-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ContractFeatureListComponent {}
+export class ContractFeatureListComponent implements OnInit {
+  private facade = inject(FacadeService);
+
+  readonly columndefs = ['policyNumber', 'createdOn', "insuranceStart", "customer"];
+  readonly contracts$ = this.facade.contracts$;
+
+  ngOnInit(): void {
+    this.facade.loadAllContracts();
+  }
+
+}

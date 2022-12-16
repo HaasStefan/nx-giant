@@ -1,1 +1,2 @@
-export * from './lib/contract-data-access/contract-data-access.component';
+export * from './lib/entities/contract.model';
+export * from './lib/application/facade.service';

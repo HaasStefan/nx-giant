@@ -1,1 +1,4 @@
-<p>contract-feature-details works!</p>
+<h2 class="font-medium">Contract Details</h2>
+<ng-container *ngIf="contract$ | async as contract">
+  <nx-giant-contract-details [contract]="contract"></nx-giant-contract-details>
+</ng-container>

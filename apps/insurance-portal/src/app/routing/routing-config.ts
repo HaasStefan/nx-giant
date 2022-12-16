@@ -11,7 +11,7 @@ export const routingConfigs: RoutingConfig[] = [
     domain: 'contract',
     routes: [
       {
-        path: ':id',
+        path: 'details/:id',
         hide: true,
         loadComponent: async () =>
           (await import('@nx-giant/contract/feature-details'))

@@ -1,1 +1,23 @@
-<p>contract-feature-list works!</p>
+<ng-container *ngIf="contracts$ | async as contracts">
+  <table mat-table [dataSource]="contracts">
+    <ng-container matColumnDef="policyNumber">
+      <th mat-header-cell *matHeaderCellDef>Policy Number</th>
+      <td mat-cell *matCellDef="let contract">{{ contract.policyNumber }}</td>
+    </ng-container>
+    <ng-container matColumnDef="createdOn">
+      <th mat-header-cell *matHeaderCellDef>Created On</th>
+      <td mat-cell *matCellDef="let contract">{{ contract.createdOn | date }}</td>
+    </ng-container>
+    <ng-container matColumnDef="insuranceStart">
+      <th mat-header-cell *matHeaderCellDef>Insurance Start</th>
+      <td mat-cell *matCellDef="let contract">{{ contract.insuranceStart | date }}</td>
+    </ng-container>
+    <ng-container matColumnDef="customer">
+      <th mat-header-cell *matHeaderCellDef>Customer</th>
+      <td mat-cell *matCellDef="let contract">{{ contract.customer.firstName + ' ' + contract.customer.lastName }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columndefs"></tr>
+    <tr mat-row *matRowDef="let row; columns: columndefs;" [routerLink]="['/', 'contract', 'details', row.id]"></tr>
+  </table>
+</ng-container>

@@ -1,0 +1,28 @@
+[
+  {
+    "id": "3419e6ca-d625-4df9-9d59-f7a3faffa8cd",
+    "policyNumber": "IN-123",
+    "customer": {
+      "id": "7e5cda4e-aaa0-40e0-b806-212a4e55d628",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@gmail.com",
+      "phoneNumber": "555"
+    },
+    "createdOn": "12-13-2022",
+    "insuranceStart": "12-12-2022"
+  },
+  {
+    "id": "3eeef949-bace-49ee-b364-e36aef0fc35f",
+    "policyNumber": "IN-124",
+    "customer": {
+      "id": "c4407fe3-7378-441f-b33e-03471aca3203",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "email": "jane.doe@gmail.com",
+      "phoneNumber": "666"
+    },
+    "createdOn": "11-12-2022",
+    "insuranceStart": "11-12-2022"
+  }
+]

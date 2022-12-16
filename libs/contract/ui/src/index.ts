@@ -1,1 +1,1 @@
-export * from './lib/contract-ui/contract-ui.component';
+export * from './lib/contract-details/contract-details.component';

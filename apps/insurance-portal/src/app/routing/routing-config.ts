@@ -90,4 +90,17 @@ export const routingConfigs: RoutingConfig[] = [
       },
     ],
   },
+  {
+    domain: 'notification',
+    routes: [
+      {
+        path: 'list',
+        icon: 'list',
+        label: 'List',
+        loadComponent: async () =>
+          (await import('@nx-giant/notification/feature-list'))
+            .NotificationFeatureListComponent,
+      },
+    ],
+  },
 ];

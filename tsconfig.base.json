@@ -49,6 +49,13 @@
         "libs/customer/feature-list/src/index.ts"
       ],
       "@nx-giant/customer/ui": ["libs/customer/ui/src/index.ts"],
+      "@nx-giant/notification/data-access": [
+        "libs/notification/data-access/src/index.ts"
+      ],
+      "@nx-giant/notification/feature-list": [
+        "libs/notification/feature-list/src/index.ts"
+      ],
+      "@nx-giant/notification/ui": ["libs/notification/ui/src/index.ts"],
       "@nx-giant/shared/data-access": ["libs/shared/data-access/src/index.ts"],
       "@nx-giant/shared/domain": ["libs/shared/domain/src/index.ts"],
       "@nx-giant/shared/ui": ["libs/shared/ui/src/index.ts"],

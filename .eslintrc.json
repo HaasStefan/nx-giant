@@ -43,6 +43,13 @@
                 ]
               },
               {
+                "sourceTag": "domain:notification",
+                "onlyDependOnLibsWithTags": [
+                  "domain:notification",
+                  "domain:shared"
+                ]
+              },
+              {
                 "sourceTag": "domain:complaint",
                 "onlyDependOnLibsWithTags": [
                   "domain:complaint",

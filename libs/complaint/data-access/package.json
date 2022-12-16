@@ -1,5 +1,5 @@
 {
-  "name": "@nx-giant/complaint/domain",
+  "name": "@nx-giant/complaint/data-access",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^15.0.0",

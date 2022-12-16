@@ -29,6 +29,20 @@
                 ]
               },
               {
+                "sourceTag": "domain:claim",
+                "onlyDependOnLibsWithTags": [
+                  "domain:claim",
+                  "domain:shared"
+                ]
+              },
+              {
+                "sourceTag": "domain:complaint",
+                "onlyDependOnLibsWithTags": [
+                  "domain:complaint",
+                  "domain:shared"
+                ]
+              },
+              {
                 "sourceTag": "domain:customer",
                 "onlyDependOnLibsWithTags": [
                   "domain:customer",

@@ -15,12 +15,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-giant/claim/domain": ["libs/claim/domain/src/index.ts"],
+      "@nx-giant/claim/data-access": ["libs/claim/data-access/src/index.ts"],
       "@nx-giant/claim/feature-create": [
         "libs/claim/feature-create/src/index.ts"
       ],
       "@nx-giant/claim/feature-list": ["libs/claim/feature-list/src/index.ts"],
-      "@nx-giant/complaint/domain": ["libs/complaint/domain/src/index.ts"],
+      "@nx-giant/complaint/data-access": [
+        "libs/complaint/data-access/src/index.ts"
+      ],
       "@nx-giant/complaint/feature-create": [
         "libs/complaint/feature-create/src/index.ts"
       ],

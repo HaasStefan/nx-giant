@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'complaint-domain',
+  displayName: 'claim-data-access',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -9,7 +9,7 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../coverage/libs/complaint/domain',
+  coverageDirectory: '../../../coverage/libs/claim/data-access',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

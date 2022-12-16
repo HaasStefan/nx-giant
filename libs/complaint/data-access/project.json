@@ -1,22 +1,22 @@
 {
-  "name": "complaint-domain",
+  "name": "complaint-data-access",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "libs/complaint/domain/src",
+  "sourceRoot": "libs/complaint/data-access/src",
   "prefix": "nx-giant",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/complaint/domain/ng-package.json"
+        "project": "libs/complaint/data-access/ng-package.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/complaint/domain/tsconfig.lib.prod.json"
+          "tsConfig": "libs/complaint/data-access/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "libs/complaint/domain/tsconfig.lib.json"
+          "tsConfig": "libs/complaint/data-access/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
@@ -25,7 +25,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/complaint/domain/jest.config.ts",
+        "jestConfig": "libs/complaint/data-access/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -34,11 +34,11 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "libs/complaint/domain/**/*.ts",
-          "libs/complaint/domain/**/*.html"
+          "libs/complaint/data-access/**/*.ts",
+          "libs/complaint/data-access/**/*.html"
         ]
       }
     }
   },
-  "tags": []
+  "tags": ["type:data-access", "domain:complaint"]
 }

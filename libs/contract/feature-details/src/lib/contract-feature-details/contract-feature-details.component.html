@@ -1,4 +1,5 @@
-<h2 class="font-medium">Contract Details</h2>
+<nx-giant-title title="Contract Details"></nx-giant-title>
+
 <ng-container *ngIf="contract$ | async as contract">
   <nx-giant-contract-details [contract]="contract"></nx-giant-contract-details>
 </ng-container>

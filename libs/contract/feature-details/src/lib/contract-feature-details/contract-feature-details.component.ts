@@ -4,11 +4,12 @@ import { ContractDetailsComponent } from '@nx-giant/contract/ui';
 import { ActivatedRoute } from '@angular/router';
 import { ContractFacadeService } from '@nx-giant/contract/data-access';
 import { exhaustMap, map } from 'rxjs';
+import { TitleComponent } from '@nx-giant/shared/ui';
 
 @Component({
   selector: 'nx-giant-contract-feature-details',
   standalone: true,
-  imports: [CommonModule, ContractDetailsComponent],
+  imports: [CommonModule, ContractDetailsComponent, TitleComponent],
   templateUrl: './contract-feature-details.component.html',
   styleUrls: ['./contract-feature-details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

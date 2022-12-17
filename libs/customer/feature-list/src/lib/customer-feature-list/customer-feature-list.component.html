@@ -1,3 +1,5 @@
+<nx-giant-title title="Customers"></nx-giant-title>
+
 <ng-container *ngIf="customers$ | async as customers">
   <table mat-table [dataSource]="customers">
     <ng-container matColumnDef="firstName">

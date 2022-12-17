@@ -1,4 +1,5 @@
-<h2 class="font-medium">Customer Details</h2>
+<nx-giant-title title="Customer Details"></nx-giant-title>
+
 <ng-container *ngIf="customer$ | async as customer">
   <nx-giant-customer-details [customer]="customer"></nx-giant-customer-details>
 </ng-container>

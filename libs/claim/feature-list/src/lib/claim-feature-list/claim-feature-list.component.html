@@ -1,1 +1,29 @@
-<p>claim-feature-list works!</p>
+<nx-giant-title title="Claims"></nx-giant-title>
+
+<ng-container *ngIf="claims$ | async as claims">
+  <table mat-table [dataSource]="claims">
+    <ng-container matColumnDef="createdOn">
+      <th mat-header-cell *matHeaderCellDef>Created On</th>
+      <td mat-cell *matCellDef="let claim">{{ claim.createdOn | date }}</td>
+    </ng-container>
+    <ng-container matColumnDef="damageEvent">
+      <th mat-header-cell *matHeaderCellDef>Damage Event</th>
+      <td mat-cell *matCellDef="let claim">{{ claim.damageEvent }}</td>
+    </ng-container>
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef>Firstname</th>
+      <td mat-cell *matCellDef="let claim">{{ claim.customer.firstName }}</td>
+    </ng-container>
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef>Lastname</th>
+      <td mat-cell *matCellDef="let claim">{{ claim.customer.lastName }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columndefs"></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: columndefs"
+      [routerLink]="['/', 'claim', 'details', row.id]"
+    ></tr>
+  </table>
+</ng-container>

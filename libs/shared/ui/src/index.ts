@@ -1,3 +1,3 @@
-export * from './lib/shared-ui/shared-ui.component';
+export * from './lib/capitalize.pipe';
 
-export * from './lib/shared-ui/capitalize.pipe';
+export * from './lib/title/title.component';

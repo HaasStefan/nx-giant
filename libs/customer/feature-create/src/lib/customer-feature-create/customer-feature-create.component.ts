@@ -7,11 +7,12 @@ import {
 } from '@nx-giant/customer/data-access';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
+import { TitleComponent } from '@nx-giant/shared/ui';
 
 @Component({
   selector: 'nx-giant-customer-feature-create',
   standalone: true,
-  imports: [CommonModule, CustomerFormComponent],
+  imports: [CommonModule, CustomerFormComponent, TitleComponent],
   templateUrl: './customer-feature-create.component.html',
   styleUrls: ['./customer-feature-create.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,4 +1,5 @@
-<h2 class="font-medium">Create Customer</h2>
+<nx-giant-title title="Create Customer"></nx-giant-title>
+
 <nx-giant-customer-form
   [disabled]="(disabled$ | async) ?? false"
   (save)="onSave($event)"

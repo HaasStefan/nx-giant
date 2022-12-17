@@ -1,0 +1,31 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+  class="grid grid-rows-4 grid-flow-col gap-4 bg-orange-400"
+>
+  asdf
+  <mat-form-field appearance="fill">
+    <mat-label>Phonenumber</mat-label>
+    <input matInput placeholder="555" [formControlName]="'phoneNumber'" />
+    <mat-error *ngIf="phoneNumber.hasError('required')">
+      Pohonenumber is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input
+      matInput
+      placeholder="john.doe@example.com"
+      [formControlName]="'email'"
+    />
+    <mat-error *ngIf="email.hasError('required')">
+      Email is required
+    </mat-error>
+    <mat-error *ngIf="email.hasError('email')">
+      Email format is invalid
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-button color="primary" type="submit">Create</button>
+</form>

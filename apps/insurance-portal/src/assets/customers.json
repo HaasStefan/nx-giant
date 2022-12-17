@@ -1,0 +1,82 @@
+[
+  {
+    "id": "7e5cda4e-aaa0-40e0-b806-212a4e55d628",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@gmail.com",
+    "phoneNumber": "555",
+    "passportNumber": "12345",
+    "nationalIdentificationNumber": "1234567890",
+    "address": {
+      "addressLine1": "Doe Street 1",
+      "addressLine2": "Door 1",
+      "zip": "555",
+      "city": "Doe Town",
+      "country": "Doeland"
+    }
+  },
+  {
+    "id": "c4407fe3-7378-441f-b33e-03471aca3203",
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "email": "jane.doe@gmail.com",
+    "phoneNumber": "666",
+    "passportNumber": "12345",
+    "nationalIdentificationNumber": "1234567890",
+    "address": {
+      "addressLine1": "Doe Street 1",
+      "addressLine2": "Door 1",
+      "zip": "555",
+      "city": "Doe Town",
+      "country": "Doeland"
+    }
+  },
+  {
+    "id": "c197bd2c-20fb-49fe-a377-b53ba2073f83",
+    "firstName": "Max",
+    "lastName": "Muster",
+    "email": "max.muster@gmail.com",
+    "phoneNumber": "555",
+    "passportNumber": "12345",
+    "nationalIdentificationNumber": "1234567890",
+    "address": {
+      "addressLine1": "Muster Street 1",
+      "addressLine2": "Muster 1",
+      "zip": "555",
+      "city": "Muster Town",
+      "country": "Musterland"
+    }
+  },
+  {
+    "id": "fd886107-dbd4-444a-972e-69fd0c274886",
+    "firstName": "Maxine",
+    "lastName": "Muster",
+    "email": "maxine.muster@gmail.com",
+    "phoneNumber": "555",
+    "passportNumber": "12345",
+    "nationalIdentificationNumber": "1234567890",
+    "address": {
+      "addressLine1": "Muster Street 1",
+      "addressLine2": "Muster 1",
+      "zip": "555",
+      "city": "Muster Town",
+      "country": "Musterland"
+    }
+  },
+  {
+    "id": "db834824-1004-4d07-8dbe-b32ea905c393",
+    "firstName": "Johnny",
+    "lastName": "Doe",
+    "email": "johnny.doe@gmail.com",
+    "phoneNumber": "555",
+    "passportNumber": "12345",
+    "nationalIdentificationNumber": "1234567890",
+    "address": {
+      "addressLine1": "Doe Street 1",
+      "addressLine2": "Door 1",
+      "zip": "555",
+      "city": "Doe Town",
+      "country": "Doeland"
+    }
+  }
+]

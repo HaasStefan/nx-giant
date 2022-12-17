@@ -1,1 +1,2 @@
-export * from './lib/customer-data-access/customer-data-access.component';
+export * from './lib/application/customer-facade.service';
+export * from './lib/entities/customer.model';

@@ -1,7 +1,9 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import {
+  PreloadAllModules,
   provideRouter,
   withEnabledBlockingInitialNavigation,
+  withPreloading,
 } from '@angular/router';
 import { AppComponent } from './app/app.component';
 import { appRoutes } from './app/app.routes';
@@ -11,8 +13,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
+    provideRouter(
+      appRoutes,
+      withPreloading(PreloadAllModules),
+      withEnabledBlockingInitialNavigation()
+    ),
     importProvidersFrom(BrowserAnimationsModule),
-    importProvidersFrom(HttpClientModule)
+    importProvidersFrom(HttpClientModule),
   ],
 }).catch((err) => console.error(err));

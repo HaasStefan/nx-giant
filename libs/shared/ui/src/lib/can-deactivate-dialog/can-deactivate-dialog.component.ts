@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
@@ -9,5 +9,6 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [CommonModule, MatDialogModule, MatButtonModule],
   templateUrl: './can-deactivate-dialog.component.html',
   styleUrls: ['./can-deactivate-dialog.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CanDeactivateDialogComponent {}

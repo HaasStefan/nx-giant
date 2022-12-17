@@ -3,4 +3,5 @@
 <nx-giant-customer-form
   [disabled]="(disabled$ | async) ?? false"
   (save)="onSave($event)"
+  (dirtyOrTouchedChanges)="onDirtyOrTouchedChanges($event)"
 ></nx-giant-customer-form>

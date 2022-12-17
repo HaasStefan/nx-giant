@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+import { CanDeactivateGuard } from '@nx-giant/shared/util';
 
 export interface RoutingConfig {
   domain: string;
@@ -44,6 +45,7 @@ export const routingConfigs: RoutingConfig[] = [
         path: 'create',
         icon: 'plus',
         label: 'Create new customer',
+        canDeactivate: [CanDeactivateGuard],
         loadComponent: async () =>
           (await import('@nx-giant/customer/feature-create'))
             .CustomerFeatureCreateComponent,
@@ -61,6 +63,13 @@ export const routingConfigs: RoutingConfig[] = [
   {
     domain: 'claim',
     routes: [
+      {
+        path: 'details/:id',
+        hide: true,
+        loadComponent: async () =>
+          (await import('@nx-giant/claim/feature-details'))
+            .ClaimFeatureDetailsComponent,
+      },
       {
         path: 'create',
         icon: 'plus',

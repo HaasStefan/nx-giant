@@ -4,6 +4,7 @@ import {
   EventEmitter,
   inject,
   Input,
+  OnInit,
   Output,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import * as uuid from 'uuid';
+import { distinctUntilChanged, map, Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'nx-giant-customer-form[disabled]',
@@ -28,7 +30,7 @@ import * as uuid from 'uuid';
   styleUrls: ['./customer-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CustomerFormComponent {
+export class CustomerFormComponent implements OnInit {
   @Input() set disabled(value: boolean) {
     if (value) {
       this.form.disable();
@@ -37,9 +39,11 @@ export class CustomerFormComponent {
     }
   }
   @Output() save = new EventEmitter<Customer>();
+  @Output() dirtyOrTouchedChanges = new EventEmitter<boolean>();
 
   private fb = inject(FormBuilder);
 
+  dirtyOrTouchedChanges$!: Observable<boolean>;
   readonly form = this.fb.nonNullable.group({
     firstName: this.fb.control<string>('', Validators.required),
     lastName: this.fb.control<string>('', Validators.required),
@@ -64,6 +68,18 @@ export class CustomerFormComponent {
     //   country: this.fb.control<string>('', Validators.required),
     // }),
   });
+
+  ngOnInit() {
+    this.dirtyOrTouchedChanges$ = this.form.valueChanges.pipe(
+      map(() => this.form.dirty || this.form.touched),
+      distinctUntilChanged(),
+      tap((dirty) => this.dirtyOrTouchedChanges.emit(dirty))
+    );
+  }
+
+  canDeactivate(): boolean {
+    return false;
+  }
 
   onSubmit() {
     const customer: Customer = {

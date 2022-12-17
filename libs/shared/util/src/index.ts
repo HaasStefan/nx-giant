@@ -1,1 +1,1 @@
-export * from './lib/shared-util/shared-util.component';
+export * from './lib/can-deactivate.guard';

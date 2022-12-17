@@ -39,13 +39,11 @@ export class ClaimFacadeService extends ComponentStore<State> {
     });
   }
 
-  getCustomer(id: string): Observable<Claim> {
+  getClaim(id: string): Observable<Claim> {
     return this.select(({ claims, createdClaims }) =>
       [...createdClaims, ...claims].find((c) => c.id === id)
     ).pipe(
-      exhaustMap((customer) =>
-        customer ? of(customer) : this.claimService.get(id)
-      )
+      exhaustMap((claim) => (claim ? of(claim) : this.claimService.get(id)))
     );
   }
 }

@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SharedUtilComponent } from './shared-util.component';
+import { ClaimDetailsComponent } from './claim-details.component';
 
-describe('SharedUtilComponent', () => {
-  let component: SharedUtilComponent;
-  let fixture: ComponentFixture<SharedUtilComponent>;
+describe('ClaimDetailsComponent', () => {
+  let component: ClaimDetailsComponent;
+  let fixture: ComponentFixture<ClaimDetailsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SharedUtilComponent],
+      imports: [ClaimDetailsComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SharedUtilComponent);
+    fixture = TestBed.createComponent(ClaimDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

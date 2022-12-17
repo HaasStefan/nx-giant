@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Leave Site?</h2>
+
+<mat-dialog-content class="mat-typography">
+  You have unsaved changes that will be lost if you leave this site. Are you
+  sure you want to leave?
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="true">Leave Site</button>
+  <button mat-button [mat-dialog-close]="false" cdkFocusInitial>Cancel</button>
+</mat-dialog-actions>

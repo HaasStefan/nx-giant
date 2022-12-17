@@ -1,9 +1,24 @@
 <form
   [formGroup]="form"
   (ngSubmit)="onSubmit()"
-  class="grid grid-rows-4 grid-flow-col gap-4 bg-orange-400"
+  class="grid grid-rows-4 grid-cols-2 gap-4"
 >
-  asdf
+  <mat-form-field appearance="fill">
+    <mat-label>Firstname</mat-label>
+    <input matInput placeholder="John" [formControlName]="'firstName'" />
+    <mat-error *ngIf="firstName.hasError('required')">
+      Firstname is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Lastname</mat-label>
+    <input matInput placeholder="Doe" [formControlName]="'lastName'" />
+    <mat-error *ngIf="lastName.hasError('required')">
+      Lastname is required
+    </mat-error>
+  </mat-form-field>
+
   <mat-form-field appearance="fill">
     <mat-label>Phonenumber</mat-label>
     <input matInput placeholder="555" [formControlName]="'phoneNumber'" />
@@ -27,5 +42,33 @@
     </mat-error>
   </mat-form-field>
 
-  <button mat-button color="primary" type="submit">Create</button>
+  <mat-form-field appearance="fill">
+    <mat-label>Passport Number</mat-label>
+    <input matInput placeholder="123456" [formControlName]="'passportNumber'" />
+    <mat-error *ngIf="passportNumber.hasError('required')">
+      Passport Number is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>National Identification Number</mat-label>
+    <input
+      matInput
+      placeholder="123456"
+      [formControlName]="'nationalIdentificationNumber'"
+    />
+    <mat-error *ngIf="nationalIdentificationNumber.hasError('required')">
+      National Identification Number is required
+    </mat-error>
+  </mat-form-field>
+
+  <button
+    mat-button
+    color="primary"
+    type="submit"
+    [disabled]="!form.valid || form.disabled"
+    class="col-span-2"
+  >
+    Create
+  </button>
 </form>

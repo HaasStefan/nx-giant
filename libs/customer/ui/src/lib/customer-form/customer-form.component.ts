@@ -3,6 +3,7 @@ import {
   Component,
   EventEmitter,
   inject,
+  Input,
   Output,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,7 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import * as uuid from 'uuid';
 
 @Component({
-  selector: 'nx-giant-customer-form',
+  selector: 'nx-giant-customer-form[disabled]',
   standalone: true,
   imports: [
     CommonModule,
@@ -28,6 +29,13 @@ import * as uuid from 'uuid';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CustomerFormComponent {
+  @Input() set disabled(value: boolean) {
+    if (value) {
+      this.form.disable();
+    } else {
+      this.form.enable();
+    }
+  }
   @Output() save = new EventEmitter<Customer>();
 
   private fb = inject(FormBuilder);
@@ -48,18 +56,24 @@ export class CustomerFormComponent {
       Validators.required,
       Validators.minLength(6),
     ]),
-    address: this.fb.nonNullable.group({
-      addressLine1: this.fb.control<string>('', Validators.required),
-      addressLine2: this.fb.control<string | null>(null),
-      zip: this.fb.control<string>('', Validators.required),
-      city: this.fb.control<string>('', Validators.required),
-      country: this.fb.control<string>('', Validators.required),
-    }),
+    // address: this.fb.nonNullable.group({
+    //   addressLine1: this.fb.control<string>('', Validators.required),
+    //   addressLine2: this.fb.control<string | null>(null),
+    //   zip: this.fb.control<string>('', Validators.required),
+    //   city: this.fb.control<string>('', Validators.required),
+    //   country: this.fb.control<string>('', Validators.required),
+    // }),
   });
 
   onSubmit() {
     const customer: Customer = {
       ...this.form.getRawValue(),
+      address: {
+        addressLine1: 'Doe Street 1',
+        zip: '666',
+        city: 'Doetington',
+        country: 'Doemany',
+      },
       id: uuid.v4(),
     } as Customer;
 

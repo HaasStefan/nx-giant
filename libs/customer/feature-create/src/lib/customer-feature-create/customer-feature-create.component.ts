@@ -5,6 +5,7 @@ import {
   Customer,
   CustomerFacadeService,
 } from '@nx-giant/customer/data-access';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'nx-giant-customer-feature-create',
@@ -17,7 +18,11 @@ import {
 export class CustomerFeatureCreateComponent {
   private facade = inject(CustomerFacadeService);
 
+  private disabled = new BehaviorSubject(false);
+  readonly disabled$ = this.disabled.asObservable();
+
   onSave(customer: Customer) {
+    this.disabled.next(true);
     this.facade.addCustomer(customer);
   }
 }

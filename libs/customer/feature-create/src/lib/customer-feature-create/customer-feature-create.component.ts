@@ -39,7 +39,7 @@ export class CustomerFeatureCreateComponent {
     return this.dirtyOrTouched.asObservable().pipe(
       map((dirtyOrTouched) => !dirtyOrTouched),
       exhaustMap((canDeactivate) =>
-        !canDeactivate ? this.openDialog() : of(false)
+        !canDeactivate ? this.openDialog() : of(true)
       )
     );
   }

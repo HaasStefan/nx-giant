@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-giant/claim/api": ["libs/claim/api/src/index.ts"],
       "@nx-giant/claim/data-access": ["libs/claim/data-access/src/index.ts"],
       "@nx-giant/claim/feature-create": [
         "libs/claim/feature-create/src/index.ts"

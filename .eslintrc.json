@@ -1,19 +1,10 @@
 {
   "root": true,
-  "ignorePatterns": [
-    "**/*"
-  ],
-  "plugins": [
-    "@nrwl/nx"
-  ],
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nrwl/nx"],
   "overrides": [
     {
-      "files": [
-        "*.ts",
-        "*.tsx",
-        "*.js",
-        "*.jsx"
-      ],
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
         "@nrwl/nx/enforce-module-boundaries": [
           "error",
@@ -25,42 +16,48 @@
                 "sourceTag": "domain:customer",
                 "onlyDependOnLibsWithTags": [
                   "domain:customer",
-                  "domain:shared"
+                  "domain:shared",
+                  "type:api"
                 ]
               },
               {
                 "sourceTag": "domain:claim",
                 "onlyDependOnLibsWithTags": [
                   "domain:claim",
-                  "domain:shared"
+                  "domain:shared",
+                  "type:api"
                 ]
               },
               {
                 "sourceTag": "domain:contract",
                 "onlyDependOnLibsWithTags": [
                   "domain:contract",
-                  "domain:shared"
+                  "domain:shared",
+                  "type:api"
                 ]
               },
               {
                 "sourceTag": "domain:notification",
                 "onlyDependOnLibsWithTags": [
                   "domain:notification",
-                  "domain:shared"
+                  "domain:shared",
+                  "type:api"
                 ]
               },
               {
                 "sourceTag": "domain:complaint",
                 "onlyDependOnLibsWithTags": [
                   "domain:complaint",
-                  "domain:shared"
+                  "domain:shared",
+                  "type:api"
                 ]
               },
               {
                 "sourceTag": "domain:customer",
                 "onlyDependOnLibsWithTags": [
                   "domain:customer",
-                  "domain:shared"
+                  "domain:shared",
+                  "type:api"
                 ]
               },
               {
@@ -86,27 +83,25 @@
                 "onlyDependOnLibsWithTags": [
                   "type:ui",
                   "type:data-access",
-                  "type:util"
+                  "type:util",
+                  "type:api"
                 ]
               },
               {
                 "sourceTag": "type:ui",
                 "onlyDependOnLibsWithTags": [
                   "type:data-access",
-                  "type:util"
+                  "type:util",
+                  "type:api"
                 ]
               },
               {
                 "sourceTag": "type:data-access",
-                "onlyDependOnLibsWithTags": [
-                  "type:util"
-                ]
+                "onlyDependOnLibsWithTags": ["type:util", "type:api"]
               },
               {
                 "sourceTag": "domain:shared",
-                "onlyDependOnLibsWithTags": [
-                  "domain:shared"
-                ]
+                "onlyDependOnLibsWithTags": ["domain:shared"]
               }
             ]
           }
@@ -114,32 +109,17 @@
       }
     },
     {
-      "files": [
-        "*.ts",
-        "*.tsx"
-      ],
-      "extends": [
-        "plugin:@nrwl/nx/typescript"
-      ],
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
       "rules": {}
     },
     {
-      "files": [
-        "*.js",
-        "*.jsx"
-      ],
-      "extends": [
-        "plugin:@nrwl/nx/javascript"
-      ],
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
       "rules": {}
     },
     {
-      "files": [
-        "*.spec.ts",
-        "*.spec.tsx",
-        "*.spec.js",
-        "*.spec.jsx"
-      ],
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
       "env": {
         "jest": true
       },

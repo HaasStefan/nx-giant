@@ -1,5 +1,10 @@
 <nx-giant-title title="Contract Details"></nx-giant-title>
 
 <ng-container *ngIf="contract$ | async as contract">
+  <div class="text-purple-600 mb-4">
+    <nx-giant-title title="Claims" [subtitle]="true"></nx-giant-title>
+    <nx-giant-claim-info [contractId]="contract.id"></nx-giant-claim-info>
+  </div>
+
   <nx-giant-contract-details [contract]="contract"></nx-giant-contract-details>
 </ng-container>

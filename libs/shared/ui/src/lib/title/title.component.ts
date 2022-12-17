@@ -10,4 +10,5 @@ import { CommonModule } from '@angular/common';
 })
 export class TitleComponent {
   @Input() title!: string;
+  @Input() subtitle? = false;
 }

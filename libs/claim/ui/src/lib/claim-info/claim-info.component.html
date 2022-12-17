@@ -1,0 +1,16 @@
+<ng-container *ngIf="claims$ | async as claims; else noClaims">
+  <ng-container *ngIf="claims.length > 0; else noClaims">
+    <ng-container *ngFor="let claim of claims">
+      <a [routerLink]="['/', 'claim', 'details', claim.id]" class="mb-1">
+        <i class="fa-solid fa-triangle-exclamation mr-2"></i
+        ><span class="hover:underline"
+          >{{ claim.damageEvent }} on {{ claim.createdOn | date }}</span
+        >
+      </a>
+    </ng-container>
+  </ng-container>
+</ng-container>
+
+<ng-template #noClaims>
+  <i class="fa-solid fa-circle-info mr-2"></i><span>No claims.</span>
+</ng-template>

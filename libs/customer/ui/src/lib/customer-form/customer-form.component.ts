@@ -77,10 +77,6 @@ export class CustomerFormComponent implements OnInit {
     );
   }
 
-  canDeactivate(): boolean {
-    return false;
-  }
-
   onSubmit() {
     const customer: Customer = {
       ...this.form.getRawValue(),

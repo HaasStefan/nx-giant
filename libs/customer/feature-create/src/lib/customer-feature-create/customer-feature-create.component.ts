@@ -6,6 +6,7 @@ import {
   CustomerFacadeService,
 } from '@nx-giant/customer/data-access';
 import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'nx-giant-customer-feature-create',
@@ -17,12 +18,15 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class CustomerFeatureCreateComponent {
   private facade = inject(CustomerFacadeService);
+  private router = inject(Router);
 
   private disabled = new BehaviorSubject(false);
   readonly disabled$ = this.disabled.asObservable();
 
   onSave(customer: Customer) {
-    this.disabled.next(true);
     this.facade.addCustomer(customer);
+    this.disabled.next(true);
+
+    this.router.navigate(['/', 'customer', 'details', customer.id]);
   }
 }

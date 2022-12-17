@@ -2,8 +2,11 @@ import { Route } from '@angular/router';
 
 export interface RoutingConfig {
   domain: string;
-  routes: (Route &
-    ({ icon?: 'plus' | 'list'; label?: string, hide?: boolean }))[];
+  routes: (Route & {
+    icon?: 'plus' | 'list';
+    label?: string;
+    hide?: boolean;
+  })[];
 }
 
 export const routingConfigs: RoutingConfig[] = [
@@ -30,6 +33,13 @@ export const routingConfigs: RoutingConfig[] = [
   {
     domain: 'customer',
     routes: [
+      {
+        path: 'details/:id',
+        hide: true,
+        loadComponent: async () =>
+          (await import('@nx-giant/customer/feature-details'))
+            .CustomerFeatureDetailsComponent,
+      },
       {
         path: 'create',
         icon: 'plus',

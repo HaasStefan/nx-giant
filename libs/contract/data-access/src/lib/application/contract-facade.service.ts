@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { ComponentStore } from '@ngrx/component-store';
 import { tapResponse } from '@ngrx/component-store';
-import { exhaustMap, of, pipe } from 'rxjs';
+import { exhaustMap, Observable, of, pipe } from 'rxjs';
 import { Contract } from '../entities/contract.model';
 import { ContractService } from '../infrastructure/contract.service';
 
@@ -24,16 +24,19 @@ export class ContractFacadeService extends ComponentStore<State> {
     )
   );
 
-  readonly contract$ = (id: string) =>
-    this.select(({ contracts }) => contracts.find((c) => c.id === id)).pipe(
-      exhaustMap((contract) =>
-        contract ? of(contract) : this.contractService.get(id)
-      )
-    );
-
   constructor() {
     super({
       contracts: [],
     });
+  }
+
+  getContract(id: string): Observable<Contract> {
+    return this.select(({ contracts }) =>
+      contracts.find((c) => c.id === id)
+    ).pipe(
+      exhaustMap((contract) =>
+        contract ? of(contract) : this.contractService.get(id)
+      )
+    );
   }
 }

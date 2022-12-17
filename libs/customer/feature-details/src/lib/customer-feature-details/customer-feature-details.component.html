@@ -1,0 +1,4 @@
+<h2 class="font-medium">Customer Details</h2>
+<ng-container *ngIf="customer$ | async as customer">
+  <nx-giant-customer-details [customer]="customer"></nx-giant-customer-details>
+</ng-container>

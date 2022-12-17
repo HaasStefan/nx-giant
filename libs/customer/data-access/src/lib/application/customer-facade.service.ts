@@ -1,10 +1,12 @@
 import { inject, Injectable } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
-import { exhaustMap, of, pipe } from 'rxjs';
+import { tap } from 'rxjs';
+import { exhaustMap, Observable, of, pipe } from 'rxjs';
 import { Customer } from '../entities/customer.model';
 import { CustomerService } from '../infrastructure/customer.service';
 
 interface State {
+  createdCustomers: Customer[];
   customers: Customer[];
 }
 
@@ -14,7 +16,10 @@ interface State {
 export class CustomerFacadeService extends ComponentStore<State> {
   private customerService = inject(CustomerService);
 
-  readonly customers$ = this.select(({ customers }) => customers);
+  readonly customers$ = this.select(({ customers, createdCustomers }) => [
+    ...createdCustomers,
+    ...customers,
+  ]);
 
   readonly loadAllCustomers = this.effect<void>(
     pipe(
@@ -25,19 +30,23 @@ export class CustomerFacadeService extends ComponentStore<State> {
 
   readonly addCustomer = this.updater((state: State, customer: Customer) => ({
     ...state,
-    customers: [...state.customers, customer],
+    createdCustomers: [customer, ...state.createdCustomers],
   }));
 
-  readonly customer$ = (id: string) =>
-    this.select(({ customers }) => customers.find((c) => c.id === id)).pipe(
+  constructor() {
+    super({
+      createdCustomers: [],
+      customers: [],
+    });
+  }
+
+  getCustomer(id: string): Observable<Customer> {
+    return this.select(({ customers, createdCustomers }) =>
+      [...createdCustomers, ...customers].find((c) => c.id === id)
+    ).pipe(
       exhaustMap((customer) =>
         customer ? of(customer) : this.customerService.get(id)
       )
     );
-
-  constructor() {
-    super({
-      customers: [],
-    });
   }
 }

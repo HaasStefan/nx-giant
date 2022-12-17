@@ -1,0 +1,44 @@
+{
+  "name": "customer-feature-details",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/customer/feature-details/src",
+  "prefix": "nx-giant",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/customer/feature-details/ng-package.json",
+        "tailwindConfig": "libs/customer/feature-details/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/customer/feature-details/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/customer/feature-details/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/customer/feature-details/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/customer/feature-details/**/*.ts",
+          "libs/customer/feature-details/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["type:feature", "domain:customer"]
+}

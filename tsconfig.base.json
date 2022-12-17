@@ -45,6 +45,9 @@
       "@nx-giant/customer/feature-create": [
         "libs/customer/feature-create/src/index.ts"
       ],
+      "@nx-giant/customer/feature-details": [
+        "libs/customer/feature-details/src/index.ts"
+      ],
       "@nx-giant/customer/feature-list": [
         "libs/customer/feature-list/src/index.ts"
       ],

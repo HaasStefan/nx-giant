@@ -1,11 +1,25 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CustomerFacadeService } from '@nx-giant/customer/data-access';
+import { MatTableModule } from '@angular/material/table';
+import { RouterModule } from '@angular/router';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'nx-giant-customer-feature-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatTableModule, RouterModule],
   templateUrl: './customer-feature-list.component.html',
   styleUrls: ['./customer-feature-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CustomerFeatureListComponent {}
+export class CustomerFeatureListComponent implements OnInit {
+  private facade = inject(CustomerFacadeService);
+
+  readonly columndefs = ['firstName', 'lastName', 'email', 'phoneNumber'];
+  readonly customers$ = this.facade.customers$;
+
+  ngOnInit() {
+    this.facade.loadAllCustomers();
+  }
+}

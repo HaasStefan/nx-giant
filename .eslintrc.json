@@ -13,54 +13,6 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "domain:customer",
-                "onlyDependOnLibsWithTags": [
-                  "domain:customer",
-                  "domain:shared",
-                  "type:api"
-                ]
-              },
-              {
-                "sourceTag": "domain:claim",
-                "onlyDependOnLibsWithTags": [
-                  "domain:claim",
-                  "domain:shared",
-                  "type:api"
-                ]
-              },
-              {
-                "sourceTag": "domain:contract",
-                "onlyDependOnLibsWithTags": [
-                  "domain:contract",
-                  "domain:shared",
-                  "type:api"
-                ]
-              },
-              {
-                "sourceTag": "domain:notification",
-                "onlyDependOnLibsWithTags": [
-                  "domain:notification",
-                  "domain:shared",
-                  "type:api"
-                ]
-              },
-              {
-                "sourceTag": "domain:complaint",
-                "onlyDependOnLibsWithTags": [
-                  "domain:complaint",
-                  "domain:shared",
-                  "type:api"
-                ]
-              },
-              {
-                "sourceTag": "domain:customer",
-                "onlyDependOnLibsWithTags": [
-                  "domain:customer",
-                  "domain:shared",
-                  "type:api"
-                ]
-              },
-              {
                 "sourceTag": "type:app",
                 "onlyDependOnLibsWithTags": [
                   "type:api",
@@ -69,6 +21,10 @@
                   "type:data-access",
                   "type:util"
                 ]
+              },
+              {
+                "sourceTag": "type:anti-corruption-layer",
+                "onlyDependOnLibsWithTags": ["type:api"]
               },
               {
                 "sourceTag": "type:api",
@@ -84,7 +40,8 @@
                   "type:ui",
                   "type:data-access",
                   "type:util",
-                  "type:api"
+                  "type:api",
+                  "type:anti-corruption-layer"
                 ]
               },
               {
@@ -92,16 +49,54 @@
                 "onlyDependOnLibsWithTags": [
                   "type:data-access",
                   "type:util",
-                  "type:api"
+                  "type:anti-corruption-layer"
                 ]
               },
               {
                 "sourceTag": "type:data-access",
-                "onlyDependOnLibsWithTags": ["type:util", "type:api"]
+                "onlyDependOnLibsWithTags": [
+                  "type:util",
+                  "type:anti-corruption-layer"
+                ]
               },
               {
                 "sourceTag": "domain:shared",
                 "onlyDependOnLibsWithTags": ["domain:shared"]
+              },
+              {
+                "sourceTag": "domain:claim",
+                "onlyDependOnLibsWithTags": ["domain:claim", "domain:shared"]
+              },
+              {
+                "sourceTag": "domain:contract",
+                "onlyDependOnLibsWithTags": [
+                  "domain:contract",
+                  "domain:shared",
+                  "domain:claim/api-contract",
+                  "domain:complaint/api-contract"
+                ]
+              },
+              {
+                "sourceTag": "domain:notification",
+                "onlyDependOnLibsWithTags": [
+                  "domain:notification",
+                  "domain:shared"
+                ]
+              },
+              {
+                "sourceTag": "domain:complaint",
+                "onlyDependOnLibsWithTags": [
+                  "domain:complaint",
+                  "domain:shared"
+                ]
+              },
+              {
+                "sourceTag": "domain:customer",
+                "onlyDependOnLibsWithTags": [
+                  "domain:customer",
+                  "domain:shared",
+                  "domain:notification/api-customer"
+                ]
               }
             ]
           }

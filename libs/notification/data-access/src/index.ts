@@ -1,1 +1,2 @@
-export * from './lib/notification-data-access/notification-data-access.component';
+export * from './lib/application/notification-facade.service';
+export * from './lib/entities/notification.model';

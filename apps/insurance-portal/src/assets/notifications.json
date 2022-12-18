@@ -1,0 +1,28 @@
+[
+  {
+    "id": "3557aba9-dd31-4957-9eaa-78562dc9dd57",
+    "sentOn": "12-18-2022",
+    "receiver": "john@doe.com",
+    "sender": "insurance@insure.com",
+    "type": "email",
+    "subject": "Welcome",
+    "message": "Welcome to our insurance! Thanks bro.",
+    "reference": {
+      "type": "customer",
+      "id": "7e5cda4e-aaa0-40e0-b806-212a4e55d628"
+    }
+  },
+  {
+    "id": "7682dd1b-e955-4d37-b53d-e3eb685bae74",
+    "sentOn": "12-12-2022",
+    "receiver": "jane@doe.com",
+    "sender": "insurance@insure.com",
+    "type": "email",
+    "subject": "Welcome",
+    "message": "Welcome to our insurance! Thanks bro.",
+    "reference": {
+      "type": "customer",
+      "id": "c4407fe3-7378-441f-b33e-03471aca3203"
+    }
+  }
+]

@@ -1,4 +1,10 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   Complaint,
@@ -13,6 +19,7 @@ import { ComplaintReasonPipe } from '../complaint-reason.pipe';
   imports: [CommonModule, ComplaintReasonPipe],
   templateUrl: './complaint-info.component.html',
   styleUrls: ['./complaint-info.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ComplaintInfoComponent implements OnInit {
   private facade = inject(ComplaintFacadeService);

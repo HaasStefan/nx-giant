@@ -5,13 +5,14 @@ import {
   Customer,
   CustomerFacadeService,
 } from '@nx-giant/customer/data-access';
-import { BehaviorSubject, exhaustMap, map, Observable, of, tap } from 'rxjs';
+import { BehaviorSubject, exhaustMap, map, Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
 import {
   CanDeactivateDialogComponent,
   TitleComponent,
 } from '@nx-giant/shared/ui';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { NotificationFacadeService } from '@nx-giant/notification/api-customer';
 
 @Component({
   selector: 'nx-giant-customer-feature-create',
@@ -27,7 +28,8 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CustomerFeatureCreateComponent {
-  private facade = inject(CustomerFacadeService);
+  private customerFacade = inject(CustomerFacadeService);
+  private notificationFacade = inject(NotificationFacadeService);
   private router = inject(Router);
   private dialog = inject(MatDialog);
 
@@ -54,8 +56,10 @@ export class CustomerFeatureCreateComponent {
   }
 
   onSave(customer: Customer) {
-    this.facade.addCustomer(customer);
+    this.customerFacade.addCustomer(customer);
     this.disabled.next(true);
+
+    this.notificationFacade.sendEmail(customer.email, 'welcome');
 
     this.router.navigate(['/', 'customer', 'details', customer.id]);
   }

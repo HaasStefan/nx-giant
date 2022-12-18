@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-giant/claim/api": ["libs/claim/api/src/index.ts"],
+      "@nx-giant/claim/api-contract": ["libs/claim/api-contract/src/index.ts"],
       "@nx-giant/claim/data-access": ["libs/claim/data-access/src/index.ts"],
       "@nx-giant/claim/feature-create": [
         "libs/claim/feature-create/src/index.ts"
@@ -25,7 +25,9 @@
       ],
       "@nx-giant/claim/feature-list": ["libs/claim/feature-list/src/index.ts"],
       "@nx-giant/claim/ui": ["libs/claim/ui/src/index.ts"],
-      "@nx-giant/complaint/api": ["libs/complaint/api/src/index.ts"],
+      "@nx-giant/complaint/api-contract": [
+        "libs/complaint/api-contract/src/index.ts"
+      ],
       "@nx-giant/complaint/data-access": [
         "libs/complaint/data-access/src/index.ts"
       ],
@@ -59,14 +61,15 @@
         "libs/customer/feature-list/src/index.ts"
       ],
       "@nx-giant/customer/ui": ["libs/customer/ui/src/index.ts"],
+      "@nx-giant/notification/api-customer": [
+        "libs/notification/api-customer/src/index.ts"
+      ],
       "@nx-giant/notification/data-access": [
         "libs/notification/data-access/src/index.ts"
       ],
       "@nx-giant/notification/feature-list": [
         "libs/notification/feature-list/src/index.ts"
       ],
-      "@nx-giant/notification/ui": ["libs/notification/ui/src/index.ts"],
-      "@nx-giant/shared/data-access": ["libs/shared/data-access/src/index.ts"],
       "@nx-giant/shared/domain": ["libs/shared/domain/src/index.ts"],
       "@nx-giant/shared/ui": ["libs/shared/ui/src/index.ts"],
       "@nx-giant/shared/util": ["libs/shared/util/src/index.ts"]

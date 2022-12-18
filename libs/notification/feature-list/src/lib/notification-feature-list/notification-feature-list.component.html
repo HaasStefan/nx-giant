@@ -1,1 +1,45 @@
-<p>notification-feature-list works!</p>
+<nx-giant-title title="Notifications"></nx-giant-title>
+
+<ng-container *ngIf="notifications$ | async as notifications">
+  <table mat-table [dataSource]="notifications">
+    <ng-container matColumnDef="sentOn">
+      <th mat-header-cell *matHeaderCellDef>Sent On</th>
+      <td mat-cell *matCellDef="let notification">
+        {{ notification.sentOn | date }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="receiver">
+      <th mat-header-cell *matHeaderCellDef>Receiver</th>
+      <td mat-cell *matCellDef="let notification">
+        {{ notification.receiver }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="sender">
+      <th mat-header-cell *matHeaderCellDef>Sender</th>
+      <td mat-cell *matCellDef="let notification">
+        {{ notification.sender }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef>Type</th>
+      <td mat-cell *matCellDef="let notification">
+        {{ notification.type }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="subject">
+      <th mat-header-cell *matHeaderCellDef>Subject</th>
+      <td mat-cell *matCellDef="let notification">
+        {{ notification.subject }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="message">
+      <th mat-header-cell *matHeaderCellDef>Message</th>
+      <td mat-cell *matCellDef="let notification">
+        {{ notification.message }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columndefs"></tr>
+    <tr mat-row *matRowDef="let row; columns: columndefs"></tr>
+  </table>
+</ng-container>

@@ -7,7 +7,6 @@ import {
 import { CommonModule } from '@angular/common';
 import { ComplaintFacadeService } from '@nx-giant/complaint/data-access';
 import { MatTableModule } from '@angular/material/table';
-import { RouterModule } from '@angular/router';
 import { TitleComponent } from '@nx-giant/shared/ui';
 import { ComplaintReasonPipe } from '@nx-giant/complaint/ui';
 

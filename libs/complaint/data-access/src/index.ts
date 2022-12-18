@@ -1,1 +1,2 @@
-export * from './lib/complaint-data-access/complaint-data-access.component';
+export * from './lib/application/complaint-facade.service';
+export * from './lib/entities/complaint.model';

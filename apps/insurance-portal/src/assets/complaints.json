@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1a1464c2-1ea7-4d02-9e94-fd4e8a520f6b",
+    "reason": "customerSupport",
+    "contractId": "3419e6ca-d625-4df9-9d59-f7a3faffa8cd",
+    "customer": {
+      "id": "7e5cda4e-aaa0-40e0-b806-212a4e55d628",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@gmail.com",
+      "phoneNumber": "555"
+    }
+  }
+]

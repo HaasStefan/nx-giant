@@ -25,6 +25,7 @@
       ],
       "@nx-giant/claim/feature-list": ["libs/claim/feature-list/src/index.ts"],
       "@nx-giant/claim/ui": ["libs/claim/ui/src/index.ts"],
+      "@nx-giant/complaint/api": ["libs/complaint/api/src/index.ts"],
       "@nx-giant/complaint/data-access": [
         "libs/complaint/data-access/src/index.ts"
       ],
@@ -34,6 +35,7 @@
       "@nx-giant/complaint/feature-list": [
         "libs/complaint/feature-list/src/index.ts"
       ],
+      "@nx-giant/complaint/ui": ["libs/complaint/ui/src/index.ts"],
       "@nx-giant/contract/data-access": [
         "libs/contract/data-access/src/index.ts"
       ],

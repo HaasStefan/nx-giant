@@ -6,6 +6,7 @@ import { ContractFacadeService } from '@nx-giant/contract/data-access';
 import { exhaustMap, map } from 'rxjs';
 import { TitleComponent } from '@nx-giant/shared/ui';
 import { ClaimInfoComponent } from '@nx-giant/claim/api';
+import { ComplaintInfoComponent } from '@nx-giant/complaint/api';
 
 @Component({
   selector: 'nx-giant-contract-feature-details',
@@ -15,6 +16,7 @@ import { ClaimInfoComponent } from '@nx-giant/claim/api';
     ContractDetailsComponent,
     TitleComponent,
     ClaimInfoComponent,
+    ComplaintInfoComponent,
   ],
   templateUrl: './contract-feature-details.component.html',
   styleUrls: ['./contract-feature-details.component.scss'],

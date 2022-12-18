@@ -1,0 +1,19 @@
+<ng-container *ngIf="complaints$ | async as complaints; else noComplaints">
+  <ng-container *ngIf="complaints.length > 0; else noComplaints">
+    <ng-container *ngFor="let complaint of complaints">
+      <a class="mb-1">
+        <i class="fa-solid fa-triangle-exclamation mr-2"></i
+        ><span
+          >{{ complaint.reason | complaintReason }} by
+          {{
+            complaint.customer.firstName + ' ' + complaint.customer.lastName
+          }}</span
+        >
+      </a>
+    </ng-container>
+  </ng-container>
+</ng-container>
+
+<ng-template #noComplaints>
+  <i class="fa-solid fa-circle-info mr-2"></i><span>No complaints.</span>
+</ng-template>

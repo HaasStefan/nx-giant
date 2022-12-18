@@ -1,6 +1,5 @@
 import { inject, Injectable } from '@angular/core';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
-import { tap } from 'rxjs';
 import { exhaustMap, Observable, of, pipe } from 'rxjs';
 import { Customer } from '../entities/customer.model';
 import { CustomerService } from '../infrastructure/customer.service';

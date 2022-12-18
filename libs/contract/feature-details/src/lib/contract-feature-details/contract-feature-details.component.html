@@ -6,5 +6,12 @@
     <nx-giant-claim-info [contractId]="contract.id"></nx-giant-claim-info>
   </div>
 
+  <div class="text-orange-600 mb-4">
+    <nx-giant-title title="Complaint" [subtitle]="true"></nx-giant-title>
+    <nx-giant-complaint-info
+      [contractId]="contract.id"
+    ></nx-giant-complaint-info>
+  </div>
+
   <nx-giant-contract-details [contract]="contract"></nx-giant-contract-details>
 </ng-container>

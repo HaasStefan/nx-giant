@@ -23,10 +23,6 @@
                 ]
               },
               {
-                "sourceTag": "type:anti-corruption-layer",
-                "onlyDependOnLibsWithTags": ["type:api"]
-              },
-              {
                 "sourceTag": "type:api",
                 "onlyDependOnLibsWithTags": [
                   "type:ui",
@@ -40,24 +36,16 @@
                   "type:ui",
                   "type:data-access",
                   "type:util",
-                  "type:api",
-                  "type:anti-corruption-layer"
+                  "type:api"
                 ]
               },
               {
                 "sourceTag": "type:ui",
-                "onlyDependOnLibsWithTags": [
-                  "type:data-access",
-                  "type:util",
-                  "type:anti-corruption-layer"
-                ]
+                "onlyDependOnLibsWithTags": ["type:data-access", "type:util"]
               },
               {
                 "sourceTag": "type:data-access",
-                "onlyDependOnLibsWithTags": [
-                  "type:util",
-                  "type:anti-corruption-layer"
-                ]
+                "onlyDependOnLibsWithTags": ["type:util"]
               },
               {
                 "sourceTag": "domain:shared",
